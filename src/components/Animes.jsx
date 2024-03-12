@@ -1,5 +1,7 @@
 import { useState, useEffect} from 'react'
+import Anime from './Anime'
 import axios from "axios"
+
 
 const API = import.meta.env.VITE_API
 function Animes() {
@@ -27,10 +29,7 @@ function Animes() {
         <tbody>
             {animes.map((anime, i)=>{
               return(
-                <tr key={i}>
-            <td> {anime.name}</td>
-            <td> {anime.description}</td>
-          </tr>
+                <Anime anime={anime} i={i}/>
               )
             })}
         </tbody>
